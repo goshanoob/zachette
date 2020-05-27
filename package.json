@@ -1,0 +1,26 @@
+{
+  "name": "zachette",
+  "version": "1.0.0",
+  "description": "App for zachet of students",
+  "main": "index.html",
+  "dependencies": {
+    "mysql2": "^2.1.0",
+    "ws": "^7.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test command",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goshanoob"
+  },
+  "keywords": [
+    "node",
+    "web",
+    "socket"
+  ],
+  "author": "Timofeev D.N.",
+  "license": "ISC"
+}
