@@ -2,7 +2,9 @@ const status = document.getElementById('status');
 const messages = document.getElementById('messages');
 const input = document.getElementById('input');
 
-const ws = new WebSocket('ws://localhost:2999');
+var HOST = location.origin.replace(/^http/, 'ws')
+const ws = new WebSocket(HOST);
+//const ws = new WebSocket('ws://localhost:2999');
 for(let i=0, tasks = document.getElementsByClassName('tasks'), len = tasks.length; i < len; i++){
     tasks[i].addEventListener('click', choose);
 }

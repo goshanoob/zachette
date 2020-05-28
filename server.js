@@ -1,5 +1,6 @@
 const WebSocket = require('ws');
-const server  = new WebSocket.Server({process.env.PORT || 5000});
+var port = process.env.PORT || 3000;
+const server  = new WebSocket.Server({port: port});
 var choosen = [];
 server.on('connection', ws => {
   server.clients.forEach(client => {
