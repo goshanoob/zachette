@@ -2,7 +2,7 @@
   "name": "zachette",
   "version": "1.0.0",
   "description": "App for zachet of students",
-  "main": "index.html",
+  "main": "server.js",
   "dependencies": {
     "mysql2": "^2.1.0",
     "ws": "^7.3.0"
