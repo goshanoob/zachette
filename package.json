@@ -4,6 +4,7 @@
   "description": "App for zachet of students",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "ws": "^7.3.0"
   },
@@ -14,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/goshanoob"
+    "url": "https://github.com/goshanoob/zachette"
   },
   "keywords": [
     "node",
