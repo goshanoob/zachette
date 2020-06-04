@@ -9,13 +9,18 @@
 <body>
     <header>
         <h1></h1>
-        <span id="status">Отключен</span>
+        <span id="status" class="status">Отключен </span>
+        <span id="statusServ" class="status"> Сервер не ответил</span>
+        <span id="time"></span>
     </header>
 
     <main>
-        <div id="messages"></div>
-
-        <input id="input" type="text">
+        <div class="search">
+                <input id="userName" type="text"  value="" autocomplete="off">
+                <input id="sendName" type="button" value="OK" >
+                <span id="statusIdent" class="status"> Вам нужно идентифицироваться в форме слева </span>
+            <div id="searchResults"></div>
+        </div>
 
             <div class="l-wrap"><div class="three-col-grid">
                 <div id="task_1" class="tasks available">Билет 1</div>
@@ -36,60 +41,11 @@
                 <div id="task_16" class="tasks available">Билет 16</div>
                 <div id="task_17" class="tasks available">Билет 17</div></div>
             </div>
-        
+           
     </main>
+    <div id="messages"></div>
     <link rel="stylesheet" type="text/css" href="/styles.css" >
-    <script >
-        const status = document.getElementById('status');
-const messages = document.getElementById('messages');
-const input = document.getElementById('input');
-
-
-var HOST = location.origin.replace(/^http/, 'ws')
-const ws = new WebSocket(HOST);
-
-for(let i=0, tasks = document.getElementsByClassName('tasks'), len = tasks.length; i < len; i++){
-    tasks[i].addEventListener('click', choose);
-}
-function choose(){
-    ws.send(JSON.stringify({username: 'goshanoob', choosenTask: this.id}));
-    
-    for(let i=0, tasks = document.getElementsByClassName('tasks'), len = tasks.length; i < len; i++){
-        tasks[i].removeEventListener('click', choose);
-    }
-}
-
-function setStatus(value){
-    status.innerHTML = value;
-}
-
-function printMessage(value){
-    for(let i=0; i<value.choosen.length; i++){
-        document.getElementById(value.choosen[i]).className = 'tasks choosen';
-    }
-    
-    if(value.hasOwnProperty("username")){
-        const div = document.createElement('div');
-        div.innerHTML = `Пользователь ${value.username} дропнул билет № ${value.choosenTask.replace(/\D/g,"")}. Удачи`;
-        messages.appendChild(div);
-    }
-    
-}
-
-
-/*
-document.getElementById("input").addEventListener('keydown', event =>{
-    if(event.keyCode === 13){
-        ws.send(JSON.stringify({username: 'goshan_loh',message: input.value}));
-        input.value = "";
-    }
-});*/
-
-
-ws.onopen = () => setStatus('Подключился');
-ws.onclose =() => setStatus('Отключился');
-ws.onmessage = response => printMessage(JSON.parse(response.data));
-
-    </script>
+    <script src="app.js"></script>
+        
 </body>
 </html>

@@ -6,6 +6,17 @@ main{
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.status {
+  color: rgb(245, 100, 100);
+  font-size: 11pt;
+  padding: 5px;
+}
+
+#statusIdent{
+  color: rgb(255, 115, 0);
+  font-size: 14pt;
+}
+
 .available{
     background: #FADADD;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -34,17 +45,6 @@ main{
     margin-top: 24px;
     margin-right: 24px;
     float: left;
-    
-  }
-  
-  /* For a 3-column grid */
-  .tasks:nth-child(4n+4) {
-    margin-right: 0;
-    float: right;
-  }
-  
-  /* Demo purposes */
-  .tasks {
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
@@ -54,4 +54,55 @@ main{
     height: 110px;
     width: 80px;
     text-align: center;
+  }
+  
+  /* For a 3-column grid */
+  .tasks:nth-child(4n+4) {
+    margin-right: 0;
+    float: right;
+  }
+  
+/* Стили поиска пользователя */
+  .search{
+    width: 500px;
+    margin: 0px;
+    position: relative;
+  }
+
+  #userName{
+    width:210px;
+    padding:2px;
+    margin:1px;
+    border:1px solid #000;
+  }
+
+  #searchResults{
+    display:none;
+    width: 350px;
+    background-color: #ffc2e8;
+    color: rgb(0, 0, 0);
+    -moz-opacity: 0.95;
+    opacity: 0.85;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=95);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+    filter:alpha(opacity=95);
+    z-index:999;
+    position: absolute;
+    top: 24px; left: 0px;
+  }
+
+  #searchResults .res{
+    cursor: pointer;
+    padding: 5px;
+    text-align: left;
+  }
+  #searchResults .res:hover{
+    color:rgb(51, 51, 39);
+    background-color:rgb(255, 168, 177);
+  }
+  #searchResults .active{
+    cursor: pointer;
+    padding: 5px;
+    color:#FEFFBD;
+    background-color:#818187;
   }
