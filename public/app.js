@@ -68,6 +68,10 @@ function makeIdentification(value){
         makeTask(); 
         FIO = value.username;
     }
+    if(value.hasOwnProperty("zadacha")){
+        // показываем задачу
+         document.getElementById("zadacha_"+value.zadacha).style.display = "block";
+    }
 }
 
 /* Вывод сообщений от сервера */
@@ -107,14 +111,3 @@ function setChoose(value){
         addMessage(`Пользователь ${value.username} дропнул билет № ${value.task.replace(/\D/g,"")}. Удачи`);
     }
 }
-
-/*
-document.getElementById("input").addEventListener('keydown', event =>{
-    if(event.keyCode === 13){
-        ws.send(JSON.stringify({username: 'goshan_loh',message: input.value}));
-        input.value = "";
-    }
-});*/
-
-
-

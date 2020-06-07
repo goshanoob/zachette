@@ -1,50 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket</title>
-    
+    <title>Document</title>
+    <style>  .zadachi {
+        background-color: rgba(255, 255, 255, 0.6);
+        border: solid 2px;
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        font-family: system-ui;
+        font-size: large;
+      }</style>
 </head>
 <body>
-    <header>
-        <h1></h1>
-        <span id="status" class="status">Отключен </span>
-        <span id="statusServ" class="status"> Сервер не ответил</span>
-        <span id="time"></span>
-    </header>
-
-    <main>
-        <div class="search">
-                <input id="userName" type="text"  value="" autocomplete="off">
-                <input id="sendName" type="button" value="OK" >
-                <span id="statusIdent" class="status"> Вам нужно идентифицироваться в форме слева </span>
-            <div id="searchResults"></div>
-        </div>
-
-            <div class="l-wrap">
-                <div class="three-col-grid">
-                    <div id="task_1" class="tasks available">Билет 1</div>
-                    <div id="task_2" class="tasks available">Билет 2</div>
-                    <div id="task_3" class="tasks available">Билет 3</div>
-                    <div id="task_4" class="tasks available">Билет 4</div>
-                    <div id="task_5" class="tasks available">Билет 5</div>
-                    <div id="task_6" class="tasks available">Билет 6</div>
-                    <div id="task_7" class="tasks available">Билет 7</div>
-                    <div id="task_8" class="tasks available">Билет 8</div>
-                    <div id="task_9" class="tasks available">Билет 9</div>
-                    <div id="task_10" class="tasks available">Билет 10</div>
-                    <div id="task_11" class="tasks available">Билет 11</div>
-                    <div id="task_12" class="tasks available">Билет 12</div>
-                    <div id="task_13" class="tasks available">Билет 13</div>
-                    <div id="task_14" class="tasks available">Билет 14</div>
-                    <div id="task_15" class="tasks available">Билет 15</div>
-
-                </div>
-            </div>
-           
-    </main>
-    
     <div class="zadachi">
         <div id="zadacha_1">
             Задача 1. Canvas. Дано произвольное количество изображений. Изображения должны поочередно изображаться на холсте, сменяя друг друга. Время смены изображения задаётся пользователем при помощи ползунка input type="range" от полусекунды до пяти секунд.
@@ -140,9 +111,6 @@
             <img src="https://i.ibb.co/hWgt67P/shag.gif">
         </div>
     </div>
-    <div id="messages"></div>
-    <link rel="stylesheet" type="text/css" href="/styles.css" >
-    <script src="app.js"></script>
-        
+    
 </body>
 </html>

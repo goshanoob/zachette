@@ -14,7 +14,7 @@ const wss = new Server({ server });
 // выбранные билеты
 var choosen = [];
 // номера задач
-const nums = [10, 8, 7, 1, 4, 5, 2, 9, 6, 3];
+const nums = [10, 8, 7, 1, 12, 4, 5, 2, 13, 9, 6, 3, 11, 14, 14];
 // перечень пользователей
 var users = {
   'Бояршинова Александра Сергеевна': 0,
@@ -105,7 +105,7 @@ wss.on('connection', ws => {
           */
           let username = data.username;
           let task = data.choosenTask;
-          let num = nums[task.replace(/\D/g,'')];
+          let num = nums[parseInt(task.replace(/\D/g,''))];
           let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
           let wasChoose = false; // для контроля повторного билета
           choosen.forEach(c => {
@@ -124,7 +124,7 @@ wss.on('connection', ws => {
           if(users.hasOwnProperty(username) && users[username] === 0){
             users[username] = task;
             choosen.push(task);
-            ws.send(JSON.stringify({messType:'identification', message:`Вы дропнули задачу №${num}`}));
+            ws.send(JSON.stringify({messType:'identification', message:`Вы дропнули задачу №${num}`, zadacha:num}));
             wss.clients.forEach(client => {
               client.send(JSON.stringify({messType:'choose', username: username, choosenTask:choosen, task: task}));
             });
@@ -183,7 +183,7 @@ function searchInMySQL(task){
       host: 'localhost',
       user: 'goshanoob',
       database: 'tasks',
-      password: 'P3cJk33A0q'
+      password: ''
   });
 
   const sql = `INSERT INTO messages(user,date,message) VALUES('${user}','${date}','${mess}')`;
