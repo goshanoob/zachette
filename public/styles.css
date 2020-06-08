@@ -63,7 +63,7 @@ main{
   }
 
   
-  div .tasks:hover{
+  div .available:hover{
     animation: run 0.1s infinite ease-in-out;
    /*visibility: hidden;*/
   }
@@ -132,7 +132,10 @@ main{
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    font-family: system-ui;
+    font-size: large;
   }
+
 
   [id^=zadacha] {
     display:none;

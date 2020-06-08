@@ -57,6 +57,10 @@ document.addEventListener('click', () => {
 /* Подтверждение выбора пользователя */
 document.getElementById('sendName').addEventListener('click', () => {
     ws.send(JSON.stringify({messType: 'identification', username: document.getElementById('userName').value}));
+    let div = document.getElementsByName('zadach');
+    for(let i = 0, len = div.length; i < len; i++){
+        div[i].style.display = "none";
+    }
 });
 
 /* Сервер обработал запрос на идентификацию и прислал ответ */

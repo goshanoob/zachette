@@ -14,7 +14,7 @@ const wss = new Server({ server });
 // выбранные билеты
 var choosen = [];
 // номера задач
-const nums = [10, 8, 7, 1, 12, 4, 5, 2, 13, 9, 6, 3, 11, 14, 14];
+const nums = [, 10, 8, 7, 1, 12, 4, 5, 2, 13, 9, 6, 3, 11, 14, 14];
 // перечень пользователей
 var users = {
   'Бояршинова Александра Сергеевна': 0,
@@ -82,7 +82,7 @@ wss.on('connection', ws => {
             let username = data.username;
             // Прислать номер билета, если уже выбран, либо оповестить о входе
             if(users[username] !== 0){
-              ws.send(JSON.stringify({messType:'identification', message:`Вы уже выбрали билет №${users[username]}`}));
+              ws.send(JSON.stringify({messType:'identification', message:`Вы уже выбрали билет №${users[username]}`, zadacha:nums[parseInt(users[username].replace(/\D/g,''))]}));
             } else {
               ws.send(JSON.stringify({messType:'identification', message:'Вы вошли - уже на троечку (шутка)', 
                 username: username})
