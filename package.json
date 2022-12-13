@@ -4,7 +4,7 @@
   "description": "App for zachet of students",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mysql2": "^2.1.0",
     "ws": "^7.3.0"
   },
